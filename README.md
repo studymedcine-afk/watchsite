@@ -34,7 +34,18 @@ The project is configured to deploy to GitHub Pages automatically:
 
 1. **GitHub Actions** is configured in [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)
 2. Every push to the `main` branch triggers an automatic build and deployment
-3. The site is available at: https://studymedcine-afk.github.io/watchsite
+3. The workflow automatically creates a `gh-pages` branch with the built site
+
+### First Time Setup - IMPORTANT
+
+You **MUST** configure GitHub Pages in your repository settings:
+
+1. Go to **https://github.com/studymedcine-afk/watchsite/settings/pages**
+2. Under **"Build and deployment"** section:
+   - Select **Deploy from a branch**
+   - Choose **gh-pages** branch from the dropdown
+   - Leave folder as **/ (root)**
+   - Click **Save**
 
 ### Manual Deployment
 
@@ -44,28 +55,13 @@ To deploy manually:
 npm run deploy
 ```
 
-Or just push to main:
+Or just push to main (automatic):
 
 ```bash
 git push origin main
 ```
 
-## Configuration
-
-### Site Configuration
-
-- **Base Path**: `/watchsite` (configured in `next.config.js`)
-- **Output**: Static export for GitHub Pages
-- **Images**: Unoptimized for static hosting
-
-### GitHub Pages Setup
-
-To enable GitHub Pages for this repository:
-
-1. Go to **Settings** → **Pages**
-2. Select **Deploy from a branch**
-3. Choose **gh-pages** branch (created by GitHub Actions)
-4. Save
+The site will be available at: https://studymedcine-afk.github.io/watchsite
 
 ## Project Structure
 
